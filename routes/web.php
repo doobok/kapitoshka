@@ -12,5 +12,14 @@
 */
 
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('layouts/pages/homepage');
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
