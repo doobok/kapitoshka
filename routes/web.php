@@ -15,6 +15,12 @@ Route::get('/', function () {
     return view('layouts/pages/homepage');
 });
 
+// Vue routes
+Route::group(['prefix' => 'serv-data'], function () {
+  Route::get('news', 'NewsController@jsonNews');
+
+});
+
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -23,3 +29,5 @@ Route::group(['prefix' => 'admin'], function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/news', 'NewsController@index')->name('news');
+Route::get('/news/{slug}', 'NewsController@article')->name('article');
