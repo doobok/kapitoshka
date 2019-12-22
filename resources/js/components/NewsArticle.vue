@@ -4,40 +4,21 @@
     <div>
       <div v-for="item in news">
 
-        <div class="section animated-row" data-section="slide03">
-          <div class="section-inner">
-              <div class="row justify-content-center">
-                  <div class="col-md-8 wide-col-laptop">
-                    <div class="title-block animate" data-animate="fadeInUp">
-            <div class="service-box">
-              <img :src="'/storage/' + item.image">
-                <span class="service-icon"><i class="fa fa-cloud" aria-hidden="true"></i></span>
+        <div class="uk-card uk-card-small uk-margin-bottom news-article">
+            <div class="uk-card-media-top">
+                <img class="article-image" :src="'/storage/' + item.image">
+            </div>
+            <div class="uk-card-body uk-padding-remove uk-margin-top">
                 <h3>{{item.title}}</h3>
-                <p>Nullam auctor, justo vitae accumsan ultrices, arcu ex molestie massa, eu maximus enim tortor vitae quam. </p>
-              </div>
-            </div>
-          </div>
-        </div>
+                <p>{{teaser(item.body)}} ...</p>
+                <a class="uk-button uk-button-default uk-text-center" :href="'/news/' + item.slug">Читати далі...</a>
             </div>
         </div>
-
-        <!-- <div class="item top-margin">
-            <div class="portfolio-item">
-                <div class="thumb">
-                    <img :src="'/storage/' + item.image">
-                </div>
-                <div class="thumb-inner" >
-                    <h4>{{item.title}}</h4>
-                    <p>Please tell your friends about it. Templatemo is the best website to download free Bootstrap themes.</p>
-                    <a class="" :href="'/news/' + item.slug">Читати далі...</a>
-                </div>
-            </div>
-        </div> -->
 
       </div>
     </div>
-    <div v-if="loading" class="item">
-      <p class=""><i class="fas fa-circle-notch spin"></i></p>
+    <div v-if="loading" class="uk-text-center">
+      <p class="uk-heading-large"><i class="fas fa-fan spin"></i></p>
     </div>
   </div>
 
@@ -92,6 +73,11 @@ export default{
                 }, 400);
 
             },
+      teaser(s) {
+        let s1 = s.substring(0,230);
+        s1=s1.replace(/<.*?>/g, "");
+        return s1;
+      }
   },
 
 }

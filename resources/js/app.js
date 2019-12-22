@@ -28,6 +28,6 @@ Vue.component('news-article', require('./components/NewsArticle.vue').default);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const video = new Vue({
-    el: '#video',
+const app = new Vue({
+    el: '#app',
 });

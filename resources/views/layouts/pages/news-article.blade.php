@@ -1,26 +1,37 @@
 @extends('layouts.app')
 
+@section('head')
+  @component('components.meta')
+
+    @slot('title') {{$page->title}} @endslot
+    @slot('description') @endslot
+    @slot('image') {{ Voyager::image($page->image) }} @endslot
+    @slot('date') {{substr($page->created_at, 0, 10)}} @endslot
+
+  @endcomponent
+@endsection
+
+@section('heading')
+  <div class="uk-text-center uk-section-small">
+    <h1 class="uk-heading-line uk-text-center"><span>{{$page->title}}</span></h1>
+  </div>
+@endsection
+
 @section('content')
 
-  <div class="section animated-row">
-                <div class="section-inner">
-                    <div class="row justify-content-center">
-                        <div class="col-md-8 wide-col-laptop">
-                            <div class="title-block animate" data-animate="fadeInUp">
-                                <h1 class="top-margin">{{$page->title}}</h1>
-                            </div>
-                            <div class="news-article animate" data-animate="fadeInUp">
-                                <img class="article-image" src="{{ Voyager::image($page->image) }}">
-                                <div class="article-text top-margin">
-                                    {!!$page->body!!}
-                                    <p class="article-info"><i class="far fa-calendar-alt"></i> {{substr($page->created_at, 0, 10)}}</p>
+  <div class="news-article uk-container-small">
+      <img class="article-image" src="{{ Voyager::image($page->image) }}">
+      <div class="article-text uk-margin-top">
 
-                                </div>
-                            </div>
+          {!!$page->body!!}
+          
+          {{-- Social share --}}
+                @include('components.sh')
 
-                        </div>
-                    </div>
-                </div>
-            </div>
+          <p class="article-info"><i class="far fa-calendar-alt"></i> {{substr($page->created_at, 0, 10)}}</p>
+
+      </div>
+  </div>
+
 
 @endsection
