@@ -17,10 +17,10 @@ Route::get('/', function () {
 
 // Vue routes
 Route::group(['prefix' => 'serv-data'], function () {
+  Route::get('menu', 'JsonDataController@menu');
   Route::get('news', 'NewsController@jsonNews');
 
 });
-
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

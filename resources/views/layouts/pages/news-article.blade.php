@@ -12,19 +12,20 @@
 @endsection
 
 @section('heading')
-  <div class="uk-text-center uk-section-small">
-    <h1 class="uk-heading-line uk-text-center"><span>{{$page->title}}</span></h1>
-  </div>
+  @component('components.heading')
+    @slot('title') {{$page->title}} @endslot
+  @endcomponent
 @endsection
 
 @section('content')
 
-  <div class="news-article uk-container-small">
+<div data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
+  <div class="news-article uk-container-small animate uk-invisible">
       <img class="article-image" src="{{ Voyager::image($page->image) }}">
       <div class="article-text uk-margin-top">
 
           {!!$page->body!!}
-          
+
           {{-- Social share --}}
                 @include('components.sh')
 
@@ -32,6 +33,6 @@
 
       </div>
   </div>
-
+</div>
 
 @endsection

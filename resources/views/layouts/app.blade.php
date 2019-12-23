@@ -31,13 +31,12 @@
               <a class="uk-navbar-item uk-logo" href="/">Капітошка</a>
             </div>
             <div class="uk-navbar-right">
-              <ul class="uk-navbar-nav uk-navbar-nav-primary">
-                <li class="uk-visible@s"><a href="/"><span class="uk-button-text uk-button-small uk-margin-small"><i class="fas fa-home"></i></span></a></li>
-                <li class="uk-visible@s"><a href="/news"><span class="uk-button-text uk-text-capitalize uk-text-bold uk-margin-small">Cторінки</span></a></li>
-                <li class="uk-visible@s"><a href="#"><span class="uk-button-text uk-text-capitalize uk-text-bold uk-margin-small">Новини</span></a></li>
-                <li class="uk-visible@s"><a href="{{route('contacts')}}"><span class="uk-button-text uk-button-small uk-margin-small"><i class="fas fa-id-card-alt"></i></span></a></li>
-                <li class="uk-hidden@s"><a class="uk-navbar-toggle" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a></li>
-              </ul>
+
+              <menu-main></menu-main>
+
+              <a class="uk-navbar-toggle uk-hidden@s" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+
+
             </div>
           </nav>
       </div>
@@ -61,26 +60,12 @@
       <!-- /FOOT -->
     </div>
     <!-- OFFCANVAS -->
-    <div id="offcanvas-nav" data-uk-offcanvas="flip: true; overlay: false">
+    <div id="offcanvas-nav" data-uk-offcanvas="mode: push; overlay: false">
       <div class="uk-offcanvas-bar uk-offcanvas-bar-animation uk-offcanvas-slide">
         <button class="uk-offcanvas-close uk-close uk-icon" type="button" data-uk-close></button>
-        <ul class="uk-nav uk-nav-default">
-          <li class="uk-active"><a href="#">Active</a></li>
-          <li class="uk-parent">
-            <a href="#">Parent</a>
-            <ul class="uk-nav-sub">
-              <li><a href="#">Sub item</a></li>
-              <li><a href="#">Sub item</a></li>
-            </ul>
-          </li>
-          <li class="uk-nav-header">Header</li>
-          <li><a href="#js-options"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: table"></span> Item</a></li>
-          <li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: thumbnails"></span> Item</a></li>
-          <li class="uk-nav-divider"></li>
-          <li><a href="#"><span class="uk-margin-small-right uk-icon" data-uk-icon="icon: trash"></span> Item</a></li>
-        </ul>
-        <h3>Title</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+        <menu-sidebar></menu-sidebar>
+
       </div>
     </div>
     <!-- /OFFCANVAS -->

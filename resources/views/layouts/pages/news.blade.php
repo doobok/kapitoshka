@@ -12,17 +12,19 @@
 @endsection
 
 @section('heading')
-  <div class="uk-text-center uk-section-small">
-    <h1 class="uk-heading-line uk-text-center"><span>Новини нашого садочку</span></h1>
-  </div>
+  @component('components.heading')
+    @slot('title') Новини нашого садочку @endslot
+  @endcomponent
 @endsection
 
 @section('content')
 
-  <div class="uk-container-small">
+  <div class="uk-container-small" data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 200">
+    <div class="animate uk-invisible">
 
-    <news-article></news-article>
+      <news-article></news-article>
 
+    </div>
   </div>
 
 @endsection
