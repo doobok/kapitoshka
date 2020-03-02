@@ -32,3 +32,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 Route::get('/news/{slug}', 'NewsController@article')->name('article');
+// pages
+Route::get('/{slug}', 'PagesController@page')->name('page');
