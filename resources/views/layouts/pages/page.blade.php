@@ -22,14 +22,21 @@
 <div data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 300">
   <div class="news-article uk-container-small animate uk-invisible">
     @isset($page->image)
-      <img class="article-image uk-margin-bottom" src="{{ Voyager::image($page->image) }}">      
+      <img class="article-image uk-margin-bottom" src="{{ Voyager::image($page->image) }}">
     @endisset
       <div class="article-text">
 
           {!!$page->body!!}
 
+          {{-- Youtube --}}
+          @isset($page->youtube)
+            <div class="uk-card uk-card-small uk-card-primary uk-card-body uk-margin-medium-top">
+              <iframe src="https://www.youtube.com/embed/{{$page->youtube}}" width="100%" height="400px" frameborder="0" uk-video="automute: true"></iframe>
+            </div>
+          @endisset  
+
           {{-- Social share --}}
-                @include('components.sh')
+          @include('components.sh')
 
       </div>
   </div>

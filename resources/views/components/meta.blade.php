@@ -23,7 +23,8 @@
 <meta name="DC.rights" content="/policy">
 <meta name="DC.rightsHolder" content="{{setting('site.title')}}">
 <meta property="og:url"           content="{{url()->current()}}">
-<meta property="og:type"          content="article">
+<meta property="og:type"          content="website">
 <meta property="og:title"         content="{{ $title }} - {{setting('site.title')}}">
 <meta property="og:description"   content="{{ $description }}">
 <meta property="og:image"         content="{{ asset($image) }}">
+<meta property="fb:app_id" content="1117103905318174">

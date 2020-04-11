@@ -10,6 +10,24 @@
 
     @yield('head')
 
+    <link rel="apple-touch-icon" sizes="57x57" href="/images/icons/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/images/icons/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/images/icons/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/images/icons/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/images/icons/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/images/icons/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/images/icons/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/images/icons/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icons/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/images/icons/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/images/icons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icons/favicon-16x16.png">
+    <link rel="manifest" href="/images/icons/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/icons/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
     <link href="{{ mix('css/app.css')}}" rel="stylesheet">
 
@@ -28,13 +46,16 @@
       <div class="backgrount-transparent" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky;">
           <nav class="uk-navbar-container uk-navbar-transparent uk-margin-remove" uk-navbar style="position: relative; z-index: 980;">
             <div class="uk-navbar-left">
-              <a class="uk-navbar-item uk-logo" href="/">Капітошка</a>
+
+              <a class="uk-navbar-item uk-logo" href="/">
+                <img data-src="/images/logo.png" width="200" height="" alt="Капітошка" uk-img>
+              </a>
             </div>
             <div class="uk-navbar-right">
 
               <menu-main></menu-main>
 
-              <a class="uk-navbar-toggle uk-hidden@s" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
+              <a class="uk-navbar-toggle uk-hidden@l" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
 
 
             </div>
@@ -55,7 +76,7 @@
       </div>
 
       <div class="uk-position-bottom-center uk-position-small">
-        <span class="uk-text-small uk-text-center">© 2019 | <a href="https://github.com/zzseba78/Kick-Off" title="Created by KickOff">Created by KickOff</a> | Built with <a href="http://getuikit.com" title="Visit UIkit 3 site" target="_blank" data-uk-tooltip><span data-uk-icon="uikit"></span></a></span>
+        <span class="uk-text-small uk-text-center">© 2019 - {{date("Y")}} | <a href="/policy" title="Ознафомитись із політикою">Політика конфіденційності</a> | Розробка і підтримка <a href="http://some.site" title="Розробник" target="_blank" data-uk-tooltip><i class="fas fa-layer-group"></i></a></span>
       </div>
       <!-- /FOOT -->
     </div>

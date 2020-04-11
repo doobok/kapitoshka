@@ -1,10 +1,10 @@
 <template>
-  <ul class="uk-navbar-nav uk-visible@s">
-    <li class="uk-visible@s"><a href="/"><span class="uk-button-text uk-button-small uk-margin-small"><i class="fas fa-home"></i></span></a></li>
+  <ul class="uk-navbar-nav uk-visible@l">
+    <li class="uk-visible@l"><a href="/"><span class="uk-button-text uk-button-small uk-margin-small"><i class="fas fa-home"></i></span></a></li>
 
     <template v-for="item in menu">
        <template v-if="item.children">
-         <li class="uk-visible@s" :key="item.id">
+         <li class="uk-visible@l" :key="item.id">
            <a href="#">
              <span class="uk-button-text uk-text-capitalize uk-text-bold uk-margin-small">{{item.title}}
                <i class="fas fa-sort-down"></i>
@@ -22,11 +22,11 @@
          </li>
         </template>
         <template v-else>
-          <li class="uk-visible@s" :key="item.id"><a v-bind:href="'/' + item.url"><span class="uk-button-text uk-text-capitalize uk-text-bold uk-margin-small">{{item.title}}</span></a></li>
+          <li class="uk-visible@l" :key="item.id"><a v-bind:href="'/' + item.url"><span class="uk-button-text uk-text-capitalize uk-text-bold uk-margin-small">{{item.title}}</span></a></li>
         </template>
     </template>
 
-    <li class="uk-visible@s"><a href="/contacts"><span class="uk-button-text uk-button-small uk-margin-small"><i class="fas fa-id-card-alt"></i></span></a></li>
+    <li class="uk-visible@l"><a href="/contacts"><span class="uk-button-text uk-button-small uk-margin-small"><i class="fas fa-id-card-alt"></i></span></a></li>
 
   </ul>
 </template>
