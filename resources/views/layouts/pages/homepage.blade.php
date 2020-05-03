@@ -3,7 +3,7 @@
 @section('head')
   @component('components.meta')
 
-    @slot('title') ЗДО №5 @endslot
+    @slot('title') Дошкільний навчальний заклад (ясла-садок) комбінованого типу №5 @endslot
     @slot('description') @endslot
     @slot('image') @endslot
     @slot('date') @endslot
