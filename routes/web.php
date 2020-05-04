@@ -34,5 +34,6 @@ Route::get('/contacts', 'PagesController@contacts')->name('contacts');
 Route::get('/news/{slug}', 'NewsController@article')->name('article');
 Route::get('/collective', 'PersonController@index')->name('collective');
 Route::get('/collective/{id}', 'PersonController@person')->name('portfolio');
+Route::get('/reports/{category}', 'ReportsController@index');
 // pages
 Route::get('/{slug}', 'PagesController@page')->name('page');

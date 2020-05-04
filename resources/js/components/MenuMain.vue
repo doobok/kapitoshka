@@ -6,15 +6,15 @@
        <template v-if="item.children">
          <li class="uk-visible@l" :key="item.id">
            <a href="#">
-             <span class="uk-button-text uk-text-capitalize uk-text-bold uk-margin-small">{{item.title}}
+             <span class="uk-button-text uk-text-uppercase uk-text-bold uk-margin-small">{{item.title}}
                <i class="fas fa-sort-down"></i>
              </span>
            </a>
-           <div class="uk-navbar-dropdown uk-width-medium" uk-dropdown="offset: -10">
+           <div class="uk-navbar-dropdown" style="width: 330px;" uk-dropdown="offset: -10">
              <ul class="uk-nav uk-navbar-dropdown-nav">
 
-               <li v-for="subitem in item.children">
-                 <a v-bind:href="'/' + subitem.url"><i class="fas fa-tint uk-margin-small-right"></i>{{subitem.title}}</a>
+               <li class="sub-menu-item" v-for="subitem in item.children">
+                 <a class="uk-text-uppercase uk-text-truncate sub-menu-item-elm" v-bind:href="'/' + subitem.url"><i class="fas fa-tint uk-margin-small-right"></i>{{subitem.title}}</a>
                </li>
 
              </ul>
@@ -22,7 +22,7 @@
          </li>
         </template>
         <template v-else>
-          <li class="uk-visible@l" :key="item.id"><a v-bind:href="'/' + item.url"><span class="uk-button-text uk-text-capitalize uk-text-bold uk-margin-small">{{item.title}}</span></a></li>
+          <li class="uk-visible@l" :key="item.id"><a v-bind:href="'/' + item.url"><span class="uk-button-text uk-text-uppercase uk-text-bold uk-margin-small">{{item.title}}</span></a></li>
         </template>
     </template>
 
