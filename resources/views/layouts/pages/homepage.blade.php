@@ -14,5 +14,7 @@
 @section('content')
 
   @include('layouts.partials.homepage.hello')
+  @include('layouts.partials.homepage.registration')
+  @include('layouts.partials.homepage.follow-us')
 
 @endsection
