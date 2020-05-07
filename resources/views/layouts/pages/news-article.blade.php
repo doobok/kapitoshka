@@ -26,6 +26,13 @@
 
           {!!$page->body!!}
 
+          @if(count($tags) > 0)
+            <span class="uk-margin-small-right">Теги:</span>
+            @foreach ($tags as $tag)
+              <span><a class="uk-button uk-button-small uk-button-default" href="{{route('news')}}?tag={{$tag->slug}}">{{$tag->title}}</a></span>
+            @endforeach
+          @endif
+
           {{-- Social share --}}
                 @include('components.sh')
 

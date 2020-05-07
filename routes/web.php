@@ -19,6 +19,7 @@ Route::get('/', function () {
 Route::group(['prefix' => 'serv-data'], function () {
   Route::get('menu', 'JsonDataController@menu');
   Route::get('news', 'NewsController@jsonNews');
+  Route::get('tags', 'NewsController@tags');
 
 });
 

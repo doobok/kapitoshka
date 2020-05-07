@@ -22,7 +22,7 @@
   <div class="uk-container-small" data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 200">
     <div class="animate uk-invisible">
 
-      <news-article></news-article>
+      <news-article tag="{{request('tag')}}"></news-article>
 
     </div>
   </div>

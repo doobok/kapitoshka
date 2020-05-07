@@ -1,8 +1,11 @@
 <template>
   <div>
+    <template v-if="!loading">
+      <news-tags :activtag="tag"></news-tags>
+    </template>
 
     <div>
-      <div v-for="item in news">
+      <div v-for="item in news" :key="item.id">
 
         <div class="uk-card uk-card-small uk-margin-bottom news-article">
             <div class="uk-card-media-top">
@@ -20,6 +23,11 @@
     <div v-if="loading" class="uk-text-center">
       <p class="uk-heading-large"><i class="fas fa-fan spin"></i></p>
     </div>
+    <div v-if="news.length === 0 && lastdata" class="news-article uk-container-small uk-text-center">
+      <p class="uk-h2">Не знайдено жодної новини</p>
+      <p class="uk-h4">Категорія не містить публікацій, <a class="uk-text-uppercase" href="/news">перейти до усіх новин</a></p>
+
+    </div>
   </div>
 
 
@@ -28,6 +36,7 @@
 
 <script>
 export default{
+  props:['tag'],
   data(){
       return{
           news: [],
@@ -37,7 +46,6 @@ export default{
       }
   },
   mounted: function () {
-    console.log('Завантажено');
     this.loadData();
     document.addEventListener('scroll', e => {
                 var scrollHeight = Math.max(
@@ -56,7 +64,7 @@ export default{
                 this.loading = true;
                 setTimeout(e => {
                     axios
-                        .get('/serv-data/news', { params: { skip: this.count } })
+                        .get('/serv-data/news', { params: { skip: this.count, tag: this.tag } })
                         .then(response => {
                             if (response.data.length != 0) {
                                 this.news = [].concat(this.news, response.data);
@@ -68,6 +76,8 @@ export default{
                             }
                             this.count = this.count+4;
                             this.loading = false;
+                        }).catch(error => {
+                          console.log(error);
                         });
 
                 }, 400);
