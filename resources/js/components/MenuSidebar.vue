@@ -12,7 +12,7 @@
            </a>
              <ul class="uk-nav-sub">
 
-               <li class="uk-active" v-for="subitem in item.children">
+               <li class="uk-active uk-text-truncate" v-for="subitem in item.children">
                  <a v-bind:href="'/' + subitem.url"><i class="fas fa-tint uk-margin-small-right"></i>{{subitem.title}}</a>
                </li>
 

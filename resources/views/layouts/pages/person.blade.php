@@ -24,7 +24,7 @@
 
     <div class="uk-child-width-expand@s uk-text-center" uk-grid>
         <div>
-            <img class="article-image" src="{{ Voyager::image($page->photo) }}">
+            <img class="article-image" src="{{Voyager::image($page->thumbnail('cropped', 'photo'))}}">
         </div>
         <div>
           <p class="uk-h1">{{$page->name}}</p>

@@ -26,8 +26,8 @@
 
       <div class="uk-card uk-grid-collapse uk-child-width-1-2@s uk-margin news-article" uk-grid>
           <div class="uk-card-media-left uk-cover-container article-image">
-              <img src="{{ Voyager::image($person->photo) }}" uk-cover>
-              <canvas width="600" height="600"></canvas>
+              <img src="{{Voyager::image($person->thumbnail('teaser', 'photo'))}}" uk-cover>
+              <canvas width="600" height="700"></canvas>
           </div>
           <div>
               <div class="uk-card-body">
@@ -38,7 +38,9 @@
                   @isset($person->rank)
                   <p class="uk-h5 uk-margin-remove-top">Звання: {{$person->rank}}</p>
                   @endisset
+                  @isset($person->stand)
                   <a class="uk-button uk-button-default uk-width-1-1 uk-margin-medium-top" href="{{route('portfolio', $person->id)}}">Портфоліо</a>
+                  @endisset
               </div>
           </div>
       </div>

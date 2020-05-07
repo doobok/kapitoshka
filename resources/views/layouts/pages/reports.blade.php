@@ -19,7 +19,7 @@
 
 @section('content')
 
-  <div class="uk-container-small" data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 200">
+  <div class="uk-container-small uk-margin-medium-bottom" data-uk-scrollspy="target: > .animate; cls: uk-animation-slide-bottom-small uk-invisible; delay: 200">
     <div class="news-article uk-container-small animate uk-invisible">
         <img class="article-image uk-margin-bottom" src="/images/report.png">
         <div class="article-text">
@@ -27,7 +27,7 @@
 
           <ul class="uk-list uk-list-large uk-list-striped">
             @foreach ($reports as $report)
-              <li><i class="fas fa-eye uk-margin-small-right"></i> 
+              <li><i class="fas fa-eye uk-margin-small-right"></i>
 
                 <?php $file = (json_decode($report->file))[0]->download_link; ?>
                 <a href="{{ Voyager::image( $file ) }}" target="_blank">{{$report->title}}</a>
