@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('layouts/pages/homepage');
-});
+})->name('mainpage');
 
 // Vue routes
 Route::group(['prefix' => 'serv-data'], function () {

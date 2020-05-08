@@ -26,12 +26,10 @@ class NewsController extends Controller
           $tag->setAttribute('count', $count);
           $tag = $tag->only(['count', 'id', 'title', 'slug']);
           $arr->push($tag);
-
         }
       }
-      $sorted = $arr->sortBy('count')->all();
 
-      return $sorted;
+      return $arr;
     }
 
     public function jsonNews(Request $request)

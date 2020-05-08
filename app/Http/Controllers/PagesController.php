@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function page($slug)
     {
-        $page = Page::where('slug', $slug)->first();
+        $page = Page::where('slug', $slug)->firstorfail();
 
         $created = $page->created_at;
         $created = Carbon::parse($created);
