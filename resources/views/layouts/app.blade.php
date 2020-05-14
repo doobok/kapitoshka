@@ -76,7 +76,7 @@
       </div>
 
       <div class="uk-position-bottom-center uk-position-small">
-        <span class="uk-text-small uk-text-center">© 2019 - {{date("Y")}} | <a href="/policy" title="Ознафомитись із політикою">Політика конфіденційності</a> | Розробка і підтримка <a href="http://some.site" title="Розробник" target="_blank" data-uk-tooltip><i class="fas fa-layer-group"></i></a></span>
+        <span class="uk-text-small uk-text-center">© 2019 - {{date("Y")}} | <a href="/policy" title="Ознафомитись із політикою">Політика конфіденційності</a> | <a href="https://t.me/wonweb" style="opacity: 0.4;" title="Розробка і підтримка" target="_blank" data-uk-tooltip><i class="fas fa-layer-group"></i></a></span>
       </div>
       <!-- /FOOT -->
     </div>
