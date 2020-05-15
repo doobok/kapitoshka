@@ -9,12 +9,14 @@
 
         <div class="uk-card uk-card-small uk-margin-bottom news-article">
             <div class="uk-card-media-top">
+              <a :href="'/news/' + item.slug">
                 <img class="article-image" :src="'/storage/' + item.image">
+              </a>
             </div>
             <div class="uk-card-body uk-padding-remove uk-margin-top">
                 <h3>{{item.title}}</h3>
                 <p>{{teaser(item.body)}} ...</p>
-                <a class="uk-button uk-button-default uk-text-center" :href="'/news/' + item.slug">Читати далі...</a>
+                <a class="uk-button uk-button-default uk-text-center uk-width-1-1" :href="'/news/' + item.slug">Читати далі...</a>
             </div>
         </div>
 

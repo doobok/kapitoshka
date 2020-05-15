@@ -24,7 +24,30 @@
       <img class="article-image" src="{{ Voyager::image($page->image) }}">
       <div class="article-text uk-margin-top">
 
+        <div class="uk-margin-medium">
           {!!$page->body!!}
+        </div>
+
+          {{-- slideshow --}}
+          @isset($page->images)
+
+          <div class="uk-position-relative uk-visible-toggle uk-light uk-margin-medium" tabindex="-1" uk-slideshow="autoplay: true; autoplay-interval: 5000">
+
+              <ul class="uk-slideshow-items">
+                @php $pictures = json_decode($page->images); @endphp
+                  @foreach($pictures as $picture)
+                    <li>
+                        <img src="{{ Voyager::image($picture) }}" alt="" uk-cover>
+                    </li>
+                  @endforeach
+              </ul>
+
+              <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+              <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+
+          </div>
+          @endisset
+          {{-- end slideshow --}}
 
           @if(count($tags) > 0)
             <span class="uk-margin-small-right">Теги:</span>
