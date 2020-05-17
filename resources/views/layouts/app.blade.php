@@ -53,7 +53,7 @@
             </div>
             <div class="uk-navbar-right">
 
-              <menu-main></menu-main>
+              <menu-main url="{{url()->current()}}"></menu-main>
 
               <a class="uk-navbar-toggle uk-hidden@l" data-uk-toggle data-uk-navbar-toggle-icon href="#offcanvas-nav"></a>
 

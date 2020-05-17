@@ -43,9 +43,9 @@
   }
 }
 
-.fadeOutDown {
+.fadeOutDown:hover {
   animation-name: fadeOutDown;
-  animation-duration: 10000ms;
+  animation-duration: 1000ms;
   animation-iteration-count: infinite;
   animation-timing-function: ease-in-out;
 }

@@ -1,7 +1,6 @@
 <template>
   <ul class="uk-navbar-nav uk-visible@l">
     <li class="uk-visible@l"><a href="/"><span class="uk-button-text uk-button-small uk-margin-small"><i class="fas fa-home"></i></span></a></li>
-
     <template v-for="item in menu">
        <template v-if="item.children">
          <li class="uk-visible@l" :key="item.id">
@@ -13,8 +12,9 @@
            <div class="uk-navbar-dropdown" style="width: 330px;" uk-dropdown="offset: -10">
              <ul class="uk-nav uk-navbar-dropdown-nav">
 
-               <li class="sub-menu-item" v-for="subitem in item.children">
-                 <a class="uk-text-uppercase uk-text-truncate sub-menu-item-elm" v-bind:href="'/' + subitem.url"><i class="fas fa-tint uk-margin-small-right"></i>{{subitem.title}}</a>
+               <li class="sub-menu-item" v-for="subitem in item.children"
+                 v-bind:class="{'sub-menu-item-active': activeItm(subitem.url) }">
+                 <a class="uk-text-uppercase uk-text-truncate sub-menu-item-elm" v-bind:href="'/' + subitem.url"><i class="fas fa-tint uk-margin-small-right fadeOutDown"></i>{{subitem.title}}</a>
                </li>
 
              </ul>
@@ -33,6 +33,7 @@
 
 <script>
 export default{
+  props: ['url'],
   data(){
       return{
           items: []
@@ -65,6 +66,14 @@ export default{
 
       });
       return selected;
+    }
+  },
+  methods: {
+    activeItm(itm) {
+      let str = this.url;
+      if(str.indexOf(itm) + 1) {
+        return true;
+      }
     }
   }
 }

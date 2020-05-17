@@ -31,7 +31,7 @@
           {{-- Youtube --}}
           @isset($page->youtube)
             <div class="uk-card uk-card-small uk-card-primary uk-card-body uk-margin-medium-top">
-              <iframe src="https://www.youtube.com/embed/{{$page->youtube}}" width="100%" height="400px" frameborder="0" uk-video="automute: true"></iframe>
+              <iframe src="https://www.youtube.com/embed/{{$page->youtube}}" width="100%" height="400px" frameborder="0" uk-video="automute: true; autoplay: false"></iframe>
             </div>
             <div class="uk-text-right">
               <a href="https://youtu.be/{{$page->youtube}}" target="_blank" class="uk-button uk-button-default uk-button-small" style="opacity: 0.5;">Переглянути на Youtube</a>
