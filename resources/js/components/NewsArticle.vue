@@ -87,7 +87,9 @@ export default{
             },
       teaser(s) {
         let s1 = s.substring(0,230);
-        s1=s1.replace(/<.*?>/g, "");
+        s1=s1.replace(/<.*?>/g, '');
+        s1=s1.replace(/[^\абвгдеєжзклмнопрстуфхчшщьюяіїийц1234567890\s]/gi, '');
+        // s1=s1.replace(/<.*?>/g, "");
         return s1;
       }
   },
