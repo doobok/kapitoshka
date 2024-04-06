@@ -3,7 +3,7 @@
 @section('head')
   @component('components.meta')
 
-    @slot('title') setting('site.description') @endslot
+    @slot('title') {{setting('site.description')}} @endslot
     @slot('description') @endslot
     @slot('image') @endslot
     @slot('date') @endslot
